@@ -215,7 +215,8 @@ Completed tests:
 
 ## Immediate Next Item
 
-Expand HTML parsing parity toward table insertion modes, implicit `tbody`
-construction, and active-formatting-element reconstruction.
+Continue HTML parsing parity with broader table insertion-mode recovery and
+active-formatting-element reconstruction. Direct `tr` children are now grouped
+into implicit `tbody` elements while authored table sections remain intact.
 
 **Tracking issue:** <https://github.com/CodeTether/TetherScript/issues/12>

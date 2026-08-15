@@ -28,7 +28,7 @@ Each fixture records:
 | CSS/layout | `tests/browser_wpt_like/css_layout.rs` | CSS grid, complete visual formatting model |
 | Timers/microtasks | `tests/browser_wpt_like/timers_microtasks.rs` | wall-clock scheduling, task-source prioritization matrix |
 | Web Storage | `tests/browser_wpt_like/storage.rs` | quota errors, cross-document storage events |
-| HTML tree construction | `tests/browser_wpt_like/html_tree.rs` | HTML5 error recovery matrix, doctype and namespace handling |
+| HTML tree construction | `tests/browser_wpt_like/html_tree.rs` | complete HTML5 table error recovery, active-formatting reconstruction, doctype and namespace handling |
 | Forms/default actions | `tests/browser_wpt_like/forms.rs` | constraint validation, form-associated custom elements |
 | Navigation/history | `tests/browser_wpt_like/navigation_history.rs` | full session history traversal algorithm |
 | Context storage/cookies | `tests/browser_wpt_like/storage_context.rs` | quota, storage partitioning by top-level site |

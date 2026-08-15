@@ -5,15 +5,14 @@
 //! computed, and a software renderer can turn the display list into deterministic
 //! pixels. It is not web-compatible yet; it is the seed for the browser track.
 
-use std::cell::RefCell;
-use std::collections::HashMap;
-use std::fmt::Write as _;
-use std::rc::Rc;
+use std::{cell::RefCell, collections::HashMap, fmt::Write as _, rc::Rc};
 
 use crate::value::Value;
 
 #[path = "browser_text.rs"]
 mod browser_text;
+#[path = "browser_html_table.rs"]
+mod html_table;
 
 const MAX_RASTER_PIXELS: usize = 32_000_000;
 
@@ -330,7 +329,7 @@ impl Default for RenderOptions {
 }
 
 pub fn parse_html(source: &str) -> Document {
-    HtmlParser::new(source).parse_document()
+    html_table::insert_implied_sections(HtmlParser::new(source).parse_document())
 }
 
 pub fn parse_css(source: &str) -> Vec<CssRule> {

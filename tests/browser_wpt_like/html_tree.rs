@@ -7,6 +7,7 @@ const CASE: Case = Case {
     unsupported: &[
         "HTML5 error recovery matrix",
         "doctype and namespace handling",
+        "active formatting element reconstruction",
     ],
 };
 
@@ -19,4 +20,9 @@ pub fn run() {
     assert_eq!(images.len(), 1);
     assert_eq!(text_content(&paragraphs[0]), "A & B");
     assert_eq!(text_content(&paragraphs[1]), "C");
+
+    let table = parse_html("<table>\n<tr><td>A</td></tr>\n<tr><td>B</td></tr>\n</table>");
+    let bodies = query_selector(&table, "table > tbody");
+    assert_eq!(bodies.len(), 1);
+    assert_eq!(query_selector(&table, "table > tbody > tr").len(), 2);
 }

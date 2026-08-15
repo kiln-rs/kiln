@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Added native HTML tree construction for implicit `tbody` elements around
+  direct table rows, with WPT-like and runnable browser coverage.
+
 ## [0.1.0-alpha.31] - 2026-08-14
 
 ### Added
