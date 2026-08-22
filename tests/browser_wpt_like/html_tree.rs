@@ -25,4 +25,11 @@ pub fn run() {
     let bodies = query_selector(&table, "table > tbody");
     assert_eq!(bodies.len(), 1);
     assert_eq!(query_selector(&table, "table > tbody > tr").len(), 2);
+
+    let stray = parse_html("<table><td>A</td><th>B</th></table>");
+    assert_eq!(query_selector(&stray, "table > tbody").len(), 1);
+    assert_eq!(query_selector(&stray, "table > tbody > tr").len(), 1);
+    assert_eq!(query_selector(&stray, "table > tbody > tr > td").len(), 1);
+    assert_eq!(query_selector(&stray, "table > tbody > tr > th").len(), 1);
+    assert_eq!(text_content(&query_selector(&stray, "td")[0]), "A");
 }

@@ -2,4 +2,8 @@ fn main() {
     let html = "<table><tr><td>A</td></tr><tr><td>B</td></tr></table>"
     let script = "let bodies=document.querySelectorAll('table > tbody');let rows=document.querySelectorAll('table > tbody > tr');bodies.length+':'+rows.length+':'+rows[0].textContent+':'+rows[1].textContent;"
     println(browser_eval_js(html, script).value)
+
+    let stray_html = "<table><td>A</td><th>B</th></table>"
+    let stray_script = "let row=document.querySelectorAll('table > tbody > tr');row.length+':'+document.querySelectorAll('td')[0].textContent+':'+document.querySelectorAll('th')[0].textContent;"
+    println(browser_eval_js(stray_html, stray_script).value)
 }

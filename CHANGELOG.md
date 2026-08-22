@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 
 - Added native HTML tree construction for implicit `tbody` elements around
   direct table rows, with WPT-like and runnable browser coverage.
+- Added foster-parenting of stray `<td>`/`<th>` cells into an implicit row
+  inside the implicit `tbody`, with WPT-like and runnable browser coverage.
 
 ## [0.1.0-alpha.31] - 2026-08-14
 

@@ -1,5 +1,8 @@
 use super::{Document, Element, Node};
 
+#[path = "browser_html_table/cell_grouping.rs"]
+mod cell_grouping;
+
 pub(super) fn insert_implied_sections(mut document: Document) -> Document {
     normalize_nodes(&mut document.children);
     document
@@ -18,6 +21,7 @@ fn normalize_nodes(nodes: &mut Vec<Node>) {
 }
 
 fn group_rows(table: &mut Element) {
+    cell_grouping::wrap_stray_cells(&mut table.children);
     let mut normalized = Vec::with_capacity(table.children.len());
     let mut rows = Vec::new();
     for child in table.children.drain(..) {

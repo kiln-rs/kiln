@@ -217,6 +217,7 @@ Completed tests:
 
 Continue HTML parsing parity with broader table insertion-mode recovery and
 active-formatting-element reconstruction. Direct `tr` children are now grouped
-into implicit `tbody` elements while authored table sections remain intact.
+into implicit `tbody` elements, stray `<td>`/`<th>` cells are foster-parented
+into an implicit row inside that group, while authored table sections remain intact.
 
 **Tracking issue:** <https://github.com/CodeTether/TetherScript/issues/12>

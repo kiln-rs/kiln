@@ -59,7 +59,7 @@ Each fixture records:
 | Selectors API | `tests/browser_wpt_like/selectors_errors.rs` | invalid selectors currently return no matches instead of `SyntaxError` |
 | Fetch/CORS | `tests/browser_wpt_like/fetch_cors_errors.rs` | missing `access-control-allow-origin` rejects fetch |
 | Module scripts | `tests/browser_wpt_like/modules_errors.rs` | missing static import reports the resolved chunk URL |
-| HTML tree construction | `tests/browser_wpt_like/html_tree_unsupported.rs` | table rows parse without implicit `tbody` insertion |
+| HTML tree construction | `tests/browser_wpt_like/html_tree_unsupported.rs` | direct table rows gain an implicit `tbody`, and stray `<td>`/`<th>` cells are foster-parented into an implicit row; the complete HTML5 table insertion-mode error recovery matrix remains unsupported |
 | Realtime channels | `tests/browser_wpt_like/realtime_errors.rs` | failed WebSocket dispatches error/close metadata |
 | Permissions/media APIs | `tests/browser_wpt_like/permissions_media_errors.rs` | denied camera rejects `getUserMedia` with `NotAllowedError` |
 | Frames/window messaging | `tests/browser_wpt_like/frames_errors.rs` | cross-origin frame message is blocked until policy allows origin |
